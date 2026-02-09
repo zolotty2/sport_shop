@@ -1,6 +1,6 @@
 ﻿namespace sport_shop
 {
-    partial class FormMenu
+    partial class FormProducts
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
+            dgvProducts = new DataGridView();
             paneltop = new Panel();
+            btnBack = new Button();
             lblUserName = new Label();
             btnLogout = new Button();
-            panel1 = new Panel();
-            btnOrders = new Button();
-            btnProducts = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             paneltop.SuspendLayout();
-            panel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // dgvProducts
+            // 
+            dgvProducts.AllowUserToAddRows = false;
+            dgvProducts.AllowUserToDeleteRows = false;
+            dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvProducts.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvProducts.BackgroundColor = Color.White;
+            dgvProducts.BorderStyle = BorderStyle.None;
+            dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProducts.Dock = DockStyle.Fill;
+            dgvProducts.Location = new Point(0, 43);
+            dgvProducts.Margin = new Padding(4);
+            dgvProducts.MultiSelect = false;
+            dgvProducts.Name = "dgvProducts";
+            dgvProducts.RowHeadersVisible = false;
+            dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProducts.Size = new Size(924, 482);
+            dgvProducts.TabIndex = 3;
             // 
             // paneltop
             // 
+            paneltop.Controls.Add(btnBack);
             paneltop.Controls.Add(lblUserName);
             paneltop.Controls.Add(btnLogout);
             paneltop.Dock = DockStyle.Top;
             paneltop.Location = new Point(0, 0);
             paneltop.Margin = new Padding(4);
             paneltop.Name = "paneltop";
-            paneltop.Size = new Size(1029, 33);
-            paneltop.TabIndex = 0;
+            paneltop.Padding = new Padding(0, 0, 0, 13);
+            paneltop.Size = new Size(924, 43);
+            paneltop.TabIndex = 2;
+            // 
+            // btnBack
+            // 
+            btnBack.BackColor = Color.FromArgb(67, 97, 238);
+            btnBack.Dock = DockStyle.Left;
+            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Location = new Point(0, 0);
+            btnBack.Margin = new Padding(5);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(248, 30);
+            btnBack.TabIndex = 8;
+            btnBack.Text = "Назад";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
             // 
             // lblUserName
             // 
             lblUserName.AutoSize = true;
             lblUserName.Dock = DockStyle.Right;
-            lblUserName.Location = new Point(736, 0);
-            lblUserName.Margin = new Padding(5, 0, 5, 0);
+            lblUserName.Location = new Point(686, 0);
+            lblUserName.Margin = new Padding(4, 0, 4, 0);
             lblUserName.Name = "lblUserName";
             lblUserName.Size = new Size(45, 19);
-            lblUserName.TabIndex = 8;
+            lblUserName.TabIndex = 6;
             lblUserName.Text = "label1";
             lblUserName.TextAlign = ContentAlignment.MiddleRight;
             // 
@@ -67,78 +102,39 @@
             btnLogout.Dock = DockStyle.Right;
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.Location = new Point(781, 0);
-            btnLogout.Margin = new Padding(5);
+            btnLogout.Location = new Point(731, 0);
+            btnLogout.Margin = new Padding(4);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(248, 33);
-            btnLogout.TabIndex = 7;
+            btnLogout.Size = new Size(193, 30);
+            btnLogout.TabIndex = 5;
             btnLogout.Text = "Выйти";
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(btnOrders);
-            panel1.Controls.Add(btnProducts);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 33);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1029, 537);
-            panel1.TabIndex = 1;
-            // 
-            // btnOrders
-            // 
-            btnOrders.BackColor = Color.FromArgb(67, 97, 238);
-            btnOrders.FlatAppearance.BorderSize = 0;
-            btnOrders.FlatStyle = FlatStyle.Flat;
-            btnOrders.Location = new Point(192, 285);
-            btnOrders.Margin = new Padding(4);
-            btnOrders.Name = "btnOrders";
-            btnOrders.Size = new Size(645, 32);
-            btnOrders.TabIndex = 10;
-            btnOrders.Text = "Заказы";
-            btnOrders.UseVisualStyleBackColor = false;
-            btnOrders.Click += btnOrders_Click;
-            // 
-            // btnProducts
-            // 
-            btnProducts.BackColor = Color.FromArgb(67, 97, 238);
-            btnProducts.FlatAppearance.BorderSize = 0;
-            btnProducts.FlatStyle = FlatStyle.Flat;
-            btnProducts.Location = new Point(192, 220);
-            btnProducts.Margin = new Padding(4);
-            btnProducts.Name = "btnProducts";
-            btnProducts.Size = new Size(645, 32);
-            btnProducts.TabIndex = 9;
-            btnProducts.Text = "Товары";
-            btnProducts.UseVisualStyleBackColor = false;
-            btnProducts.Click += btnProducts_Click;
-            // 
-            // FormMenu
+            // FormProducts
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1029, 570);
-            Controls.Add(panel1);
+            ClientSize = new Size(924, 525);
+            Controls.Add(dgvProducts);
             Controls.Add(paneltop);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(4);
-            Name = "FormMenu";
-            Text = "FormMenu";
-            Load += FormMenu_Load;
+            Name = "FormProducts";
+            Text = "Products";
+            Load += FormProducts_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
             paneltop.ResumeLayout(false);
             paneltop.PerformLayout();
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
+        private DataGridView dgvProducts;
         private Panel paneltop;
+        private Button btnBack;
         private Label lblUserName;
         private Button btnLogout;
-        private Panel panel1;
-        private Button btnOrders;
-        private Button btnProducts;
     }
 }

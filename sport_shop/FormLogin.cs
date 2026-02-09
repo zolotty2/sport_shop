@@ -5,7 +5,7 @@ namespace sport_shop
 {
     public partial class FormLogin : Form
     {
-        public User CurretUser { get; private set; }
+        public Models.User CurretUser { get; private set; }
         public bool IsGuest { get; private set; }
         public FormLogin()
         {
@@ -13,16 +13,15 @@ namespace sport_shop
         }
 
 
-        private void BtnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrWhiteSpace(txtLogin.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 MessageBox.Show("¬ведите логи или пароль", "ќшибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-           /* using (var db = new sport_shop())
+            using (var db = new SportShopDbContext())
             {
-                var user = db.Users.Where(w => w.Login == txtLogin.Text && w.Pass == txtPassword.Text).FirstOrDefault();
+                var user = db.Users.Where(w => w.UserLogin == txtLogin.Text && w.UserPassword == txtPassword.Text).FirstOrDefault();
                 if (user != null)
                 {
                     CurretUser = user;
@@ -36,7 +35,7 @@ namespace sport_shop
                 }
             }
 
-        }*/
+        }
         private void btnGuest_Click(object sender, EventArgs e)
         {
             CurretUser = null;
